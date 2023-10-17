@@ -6,7 +6,6 @@ from rest_framework import views, status
 from rest_framework.response import Response
 
 
-
 class ContactAPIView(views.APIView):
     """
     A simple APIView for creating contact entires.
@@ -35,5 +34,4 @@ class ContactAPIView(views.APIView):
             else:
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except JSONDecodeError:
-            return JsonResponse({"result": "error","message": "Json decoding error"}, status= 400)
-
+            return JsonResponse({"result": "error", "message": "Json decoding error"}, status=400)
