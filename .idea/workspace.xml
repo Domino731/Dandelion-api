@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1332a366-8013-4d64-9621-e93670f613b4" name="Changes" comment="" />
+    <list default="true" id="1332a366-8013-4d64-9621-e93670f613b4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/dandelionapi/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dandelionapi/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dandelionapi/dandelionapi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dandelionapi/dandelionapi/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +72,7 @@
       <workItem from="1693071034745" duration="6000" />
       <workItem from="1697383188854" duration="3084000" />
       <workItem from="1697484061125" duration="653000" />
-      <workItem from="1697569347049" duration="696000" />
+      <workItem from="1697569347049" duration="1021000" />
     </task>
     <servers />
   </component>

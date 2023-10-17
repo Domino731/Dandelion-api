@@ -29,6 +29,7 @@ class ContactAPIView(views.APIView):
             data = JSONParser().parse(request)
             serializer = ContactSerializer(data=data)
             if serializer.is_valid(raise_exception=True):
+                # save to db
                 serializer.save()
                 return Response(serializer.data)
             else:
