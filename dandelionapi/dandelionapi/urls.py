@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from core import views as core_views
+from dandelionapi.core import views as core_views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
