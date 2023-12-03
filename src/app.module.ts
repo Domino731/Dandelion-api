@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UsersController } from './users/users.controller';
 
 @Module({
   imports: [
@@ -13,10 +14,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       password: 'qwerty',
       database: 'main',
       entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+      migrations: ['migrations/**'],
       synchronize: true,
     }),
   ],
-  controllers: [AppController],
+  controllers: [AppController, UsersController],
   providers: [AppService],
 })
 export class AppModule {}
