@@ -11,10 +11,11 @@ const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const typeorm_1 = require("@nestjs/typeorm");
-const users_controller_1 = require("./users/users.controller");
+const users_module_1 = require("./users/users.module");
 let AppModule = class AppModule {
 };
-AppModule = __decorate([
+exports.AppModule = AppModule;
+exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
             typeorm_1.TypeOrmModule.forRoot({
@@ -24,14 +25,13 @@ AppModule = __decorate([
                 username: 'postgres',
                 password: 'qwerty',
                 database: 'main',
-                entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-                migrations: ['migrations/**'],
+                entities: ['dist/**/*.entity.js'],
                 synchronize: true,
             }),
+            users_module_1.UsersModule,
         ],
-        controllers: [app_controller_1.AppController, users_controller_1.UsersController],
+        controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })
 ], AppModule);
-exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map
