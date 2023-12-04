@@ -20,4 +20,8 @@ export class UsersService {
   findAll() {
     return this.userRepository.find();
   }
+
+  findByEmail() {
+    return this.userRepository.findBy({ firstName: 'Antek' });
+  }
 }
