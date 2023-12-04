@@ -1,29 +1,49 @@
 import { Injectable } from '@nestjs/common';
-import { UsersService } from '../users/users.service';
+import { UserService } from 'src/user/user.service';
+import * as bcrypt from 'bcrypt';
+import { User } from 'src/entities/user.entity';
 import { JwtService } from '@nestjs/jwt';
-import { User } from '../users/entities/user.entity';
-
 @Injectable()
 export class AuthService {
   constructor(
-    private usersService: UsersService,
+    private readonly userService: UserService,
     private jwtService: JwtService,
   ) {}
 
-  async validateUser(email: string, password: string) {
-    const user = await this.usersService.findByEmail(email);
-    if (user && user.password === password) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { password, ...results } = user;
-      return results;
+  async validateUser(username: string, password: string) {
+    const user = await this.userService.findOneWithUserName(username);
+    if (user && (await bcrypt.compare(password, user.password))) {
+      const { password, ...result } = user;
+      return result;
     }
-    return user;
+    return null;
   }
 
-  login(user: User) {
-    return {
-      access_token: this.jwtService.sign(user),
+  async login(user: User) {
+    const payload = {
+      username: user.email,
+      sub: {
+        name: user.name,
+      },
     };
-    return Promise.resolve(undefined);
+
+    return {
+      ...user,
+      accessToken: this.jwtService.sign(payload),
+      refreshToken: this.jwtService.sign(payload, { expiresIn: '7d' }),
+    };
+  }
+
+  async refreshToken(user: User) {
+    const payload = {
+      username: user.email,
+      sub: {
+        name: user.name,
+      },
+    };
+
+    return {
+      accessToken: this.jwtService.sign(payload),
+    };
   }
 }
