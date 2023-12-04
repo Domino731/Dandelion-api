@@ -5,18 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8557e7c9-6b4d-4356-a84e-d64df799cc2b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/auth/auth.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/auth/auth.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/auth/auth.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/auth/jwt-auth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/auth/jwt.strategy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/auth/local-auth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/auth/local.strategy.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/app.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/app.module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/app.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/app.module.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrations/1701644949919-NewMigration.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/entities/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/entities/user.entity.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/users.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/users.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/users.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/users/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/users.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1701642507621</updated>
       <workItem from="1701642509612" duration="2560000" />
-      <workItem from="1701698330431" duration="1052000" />
+      <workItem from="1701698330431" duration="4411000" />
     </task>
     <servers />
   </component>

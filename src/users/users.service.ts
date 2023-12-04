@@ -8,20 +8,20 @@ export class UsersService {
     @InjectRepository(User) private userRepository: Repository<User>,
   ) {}
   create() {
-    const user = this.userRepository.create({
-      lastName: 'test',
-      isActive: false,
-      firstName: 'test123',
-      country: '123',
-    });
-    return this.userRepository.save(user);
+    // const user = this.userRepository.create({
+    //   lastName: 'test',
+    //   isActive: false,
+    //   firstName: 'test123',
+    //   country: '123',
+    // });
+    // return this.userRepository.save(user);
   }
 
   findAll() {
     return this.userRepository.find();
   }
 
-  findByEmail() {
-    return this.userRepository.findBy({ firstName: 'Antek' });
+  findByEmail(email) {
+    return this.userRepository.findOneBy({ email });
   }
 }
