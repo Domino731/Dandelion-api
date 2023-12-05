@@ -1,0 +1,3 @@
+export enum ERROR_CODES {
+  AUTH_DUPLICATED_EMAIL = 1,
+}

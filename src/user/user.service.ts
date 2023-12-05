@@ -9,6 +9,7 @@ export class UserService {
   constructor(
     @InjectRepository(User) private readonly userRepo: Repository<User>,
   ) {}
+
   async findOne(id: number) {
     return await this.userRepo.findOne({ where: { id: id } });
   }
