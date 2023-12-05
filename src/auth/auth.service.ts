@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { UserService } from 'src/user/user.service';
 import * as bcrypt from 'bcrypt';
-import { User } from 'src/entities/user.entity';
+import { User } from 'src/user/user.entity';
 import { JwtService } from '@nestjs/jwt';
 @Injectable()
 export class AuthService {
@@ -23,7 +23,7 @@ export class AuthService {
     const payload = {
       username: user.email,
       sub: {
-        name: user.name,
+        name: user.nick,
       },
     };
 
@@ -38,7 +38,7 @@ export class AuthService {
     const payload = {
       username: user.email,
       sub: {
-        name: user.name,
+        name: user.nick,
       },
     };
 

@@ -1,6 +1,6 @@
-import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
+import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
-const config: PostgresConnectionOptions = {
+const config: TypeOrmModuleOptions = {
   type: 'postgres',
   host: 'localhost',
   port: 5432,

@@ -3,18 +3,17 @@ import {
   BeforeUpdate,
   Column,
   Entity,
-  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
-import { Comment } from './comment.entity';
 @Entity()
 export class User {
+  // DATA //
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ unique: true, nullable: false })
-  name: string;
+  nick: string;
 
   @Column({ nullable: false, unique: true })
   email: string;
@@ -22,11 +21,10 @@ export class User {
   @Column({ nullable: false })
   password: string;
 
-  @OneToMany((type) => Comment, (comment) => comment.user)
-  comments: Comment[];
-
+  // UTILS //
   @BeforeInsert()
-  async hashPasword() {
+  @BeforeUpdate()
+  async hashPassword() {
     this.password = await bcrypt.hash(this.password, 10);
   }
 }

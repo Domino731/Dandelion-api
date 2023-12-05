@@ -6,7 +6,7 @@ import { LocalAuthGuard } from './guards/local-auth.guard';
 import { RefreshJwtGuard } from './guards/refresh-jwt-auth.guard';
 import { RefreshJwtStrategy } from './strategies/refreshToken.strategy';
 
-@Controller('auth')
+@Controller('/auth')
 export class AuthController {
   constructor(
     private authService: AuthService,
@@ -14,18 +14,18 @@ export class AuthController {
   ) {}
 
   @UseGuards(LocalAuthGuard)
-  @Post('login')
+  @Post('/login')
   async login(@Request() req) {
     return await this.authService.login(req.user);
   }
 
-  @Post('register')
+  @Post('/register')
   async registerUser(@Body() createUserDto: CreateUserDto) {
     return await this.userService.create(createUserDto);
   }
 
   @UseGuards(RefreshJwtGuard)
-  @Post('refresh')
+  @Post('/refresh')
   async refrshToken(@Request() req) {
     return this.authService.refreshToken(req.user);
   }
