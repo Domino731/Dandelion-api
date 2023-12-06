@@ -3,7 +3,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 // TODO: move to .env - now isn't working :/
-export const JWT_KEY = '12312312';
+export const JWT_KEY = 'secret';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);

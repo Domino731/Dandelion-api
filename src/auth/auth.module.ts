@@ -8,8 +8,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from 'src/user/user.entity';
 import { JwtStrategy } from './strategies/jwt-strategy';
 import { RefreshJwtStrategy } from './strategies/refreshToken.strategy';
-
-console.log(process.env.JWT_SECRET);
+import { JWT_KEY } from '../main';
 
 @Module({
   providers: [
@@ -24,7 +23,8 @@ console.log(process.env.JWT_SECRET);
   imports: [
     TypeOrmModule.forFeature([User]),
     JwtModule.register({
-      secret: `${process.env.jwt_secret}`,
+      secret: `${JWT_KEY}`,
+      secretOrPrivateKey: `${JWT_KEY}`,
       signOptions: { expiresIn: '60s' },
     }),
   ],

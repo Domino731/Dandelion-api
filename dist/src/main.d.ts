@@ -1,1 +1,1 @@
-export declare const JWT_KEY = "12312312";
+export declare const JWT_KEY = "secret";

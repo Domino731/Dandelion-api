@@ -25,7 +25,11 @@ export class AuthController {
   @UseGuards(LocalAuthGuard)
   @Post('/login')
   async login(@Request() req) {
-    return await this.authService.login(req.user);
+    // 	"nick": "test",
+    // 	"password": "qwertyqwerty123@/A",
+    // 	"email": "janusz222@gmail.com"
+    console.log(req.body);
+    return await this.authService.login(req.body);
   }
 
   @Post('/register')

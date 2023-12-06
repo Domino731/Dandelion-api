@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb70fe26-3cfe-417b-9270-bf392b5cb8e1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/user/user.const.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/user.utils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/src/main.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/main.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/src/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/main.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/auth.utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/errorCode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/errorCode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/guards/local-auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/guards/local-auth.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/strategies/jwt-strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/strategies/jwt-strategy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/strategies/local-strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/strategies/local-strategy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/strategies/refreshToken.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/strategies/refreshToken.strategy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/user.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1701778664822</updated>
       <workItem from="1701778669022" duration="3518000" />
-      <workItem from="1701873240926" duration="2184000" />
+      <workItem from="1701873240926" duration="4179000" />
     </task>
     <servers />
   </component>
