@@ -3,6 +3,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/user/user.entity';
 import { Repository } from 'typeorm';
 import { CreateUserDto, UpdateUserDto } from './dto/createUserDto';
+import { userUtils } from './user.utils';
+import { USER_ERRORS } from './user.const';
 
 @Injectable()
 export class UserService {
@@ -23,6 +25,11 @@ export class UserService {
   }
 
   async create(createUserDto: CreateUserDto) {
+    // check if password is strong enough at start
+    if (!userUtils.validatePassword(createUserDto.password)) {
+      throw new Error(USER_ERRORS.WEAK_PASSWORD);
+    }
+    console.log('create');
     const user = await this.userRepo.create(createUserDto);
     await this.userRepo.save(user);
     const { password, ...result } = user;
