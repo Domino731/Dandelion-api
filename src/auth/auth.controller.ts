@@ -14,21 +14,23 @@ import { LocalAuthGuard } from './guards/local-auth.guard';
 import { RefreshJwtGuard } from './guards/refresh-jwt-auth.guard';
 import { RefreshJwtStrategy } from './strategies/refreshToken.strategy';
 import { registerErrorFactory } from './auth.utils';
+import { JwtService } from '@nestjs/jwt';
+
+// 	"password": "qwertyqwerty123@/AA",
+// 	"email": "janusz22A2@gmail.com",
+// 	"nick": "test190238123A"
 
 @Controller('/auth')
 export class AuthController {
   constructor(
     private authService: AuthService,
     private userService: UserService,
+    private jwtService: JwtService,
   ) {}
 
   @UseGuards(LocalAuthGuard)
   @Post('/login')
   async login(@Request() req) {
-    // 	"nick": "test",
-    // 	"password": "qwertyqwerty123@/A",
-    // 	"email": "janusz222@gmail.com"
-    console.log(req.body);
     return await this.authService.login(req.body);
   }
 
@@ -36,7 +38,11 @@ export class AuthController {
   async registerUser(@Res() res, @Body() createUserDto: CreateUserDto) {
     try {
       const user = await this.userService.create(createUserDto);
-      return res.status(HttpStatus.CREATED).json(user);
+      const payload = {
+        ...user,
+        ...this.authService.createTokens(user.email, user.nick),
+      };
+      return res.status(HttpStatus.CREATED).json(payload);
     } catch (e) {
       const error = registerErrorFactory(e);
       if (!error) return res.status(500).json({ message: e.message });

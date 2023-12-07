@@ -29,7 +29,7 @@ export class UserService {
     if (!userUtils.validatePassword(createUserDto.password)) {
       throw new Error(USER_ERRORS.WEAK_PASSWORD);
     }
-    console.log('create');
+
     const user = await this.userRepo.create(createUserDto);
     await this.userRepo.save(user);
     const { password, ...result } = user;
