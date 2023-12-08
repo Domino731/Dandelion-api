@@ -1,27 +1,12 @@
-import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-
-// TODO: move to .env - now isn't working :/
-export const JWT_KEY = 'secret';
+import { appConstants } from './constants';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.useGlobalPipes(
-    new ValidationPipe({
-      whitelist: true,
-      forbidNonWhitelisted: true,
-    }),
-  );
-
-  // TODO before release: change
-  app.enableCors({
-    allowedHeaders: '*',
-    origin: '*',
-    credentials: true,
-  });
-  // console.log({ secret: process.env });
-
-  await app.listen(8000);
+  app.setGlobalPrefix('v1')
+  app.enableCors()
+  await app.listen(appConstants.port);
+  console.log(`[bootstrap] server is running on port: ${appConstants.port}`)
 }
 bootstrap();
