@@ -13,6 +13,10 @@ export class AuthService {
     return await this.usersService.validateUser(email, password);
   }
 
+  async findByEmail(email: string) {
+    return await this.usersService.findByEmail(email);
+  }
+
   async login(user: any) {
     const payload = { email: user.email, name: user.name };
     return {

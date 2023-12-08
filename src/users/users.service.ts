@@ -13,6 +13,10 @@ export class UsersService {
     @InjectRepository(User) private readonly userRepo: Repository<User>,
   ) {}
 
+  async findByEmail(email: string) {
+    return await this.userRepo.findOneBy({ email });
+  }
+
   async validateUser(
     email: string,
     password: string,

@@ -4,6 +4,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import config from 'ormconfig';
+import { UserProfileModule } from './userProfile/UserProfile.module';
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import config from 'ormconfig';
     AuthModule,
     UsersModule,
     ArticlesModule,
+    UserProfileModule,
   ],
   controllers: [],
   providers: [],
