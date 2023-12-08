@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { UserProfileEntity } from '../userProfile/UserProfile.entity';
+import { JoinColumn } from 'typeorm';
 
 @Entity()
 export class User {
@@ -13,4 +15,8 @@ export class User {
 
   @Column({ unique: true })
   email: string;
+
+  @OneToOne(() => UserProfileEntity)
+  @JoinColumn()
+  profile: UserProfileEntity;
 }

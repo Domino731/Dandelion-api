@@ -9,10 +9,10 @@ import { UserProfileModule } from './userProfile/UserProfile.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot(config),
+    UserProfileModule,
     AuthModule,
     UsersModule,
     ArticlesModule,
-    UserProfileModule,
   ],
   controllers: [],
   providers: [],

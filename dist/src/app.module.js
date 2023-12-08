@@ -20,10 +20,10 @@ AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
             typeorm_1.TypeOrmModule.forRoot(ormconfig_1.default),
+            UserProfile_module_1.UserProfileModule,
             auth_module_1.AuthModule,
             users_module_1.UsersModule,
             articles_module_1.ArticlesModule,
-            UserProfile_module_1.UserProfileModule,
         ],
         controllers: [],
         providers: [],

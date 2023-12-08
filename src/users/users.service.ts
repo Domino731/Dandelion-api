@@ -6,11 +6,14 @@ import { CreateUserDto } from './dto/CreateUserDto';
 import { userUtils } from './user.utils';
 import { USER_ERRORS } from './user.const';
 import * as bcrypt from 'bcrypt';
+import { UserProfileEntity } from '../userProfile/UserProfile.entity';
 
 @Injectable()
 export class UsersService {
   constructor(
     @InjectRepository(User) private readonly userRepo: Repository<User>,
+    @InjectRepository(UserProfileEntity)
+    private readonly userProfileRepo: Repository<UserProfileEntity>,
   ) {}
 
   async findByEmail(email: string) {
@@ -40,6 +43,9 @@ export class UsersService {
       ...createUserDto,
       password: hashedPassword,
     });
+    const profile = await this.userProfileRepo.create({ nick: user.nick });
+    user.profile = profile;
+    await this.userProfileRepo.save(profile);
     await this.userRepo.save(user);
     const { password, ...result } = user;
     return result;
