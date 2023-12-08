@@ -5,48 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cff494bf-b49c-4c69-89a9-faabc36e43e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/users/user.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.dev" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/app.controller.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/app.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/app.controller.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/app.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/app.module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/app.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/app.module.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/app.service.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/app.service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/app.service.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/main.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/main.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ormconfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ormconfig.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.controller.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.service.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/auth.utils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/guards/jwt-auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/guards/jwt-auth.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/guards/local-auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/guards/local-auth.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/guards/refresh-jwt-auth.guard.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/strategies/jwt-strategy.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/strategies/local-strategy.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/strategies/refreshToken.strategy.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/errorCode.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/topic.entity.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/dto/createUserDto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/user.const.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/user.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/user.entity.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/user.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/user.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/user.utils.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,23 +26,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "ts.external.directory.path": "C:\\Users\\Dominik\\Desktop\\projects\\Dandelion-api\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/jwt__new__mechanism&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Dominik\\Desktop\\projects\\Dandelion-api\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="dandelion-api" />
@@ -210,7 +169,7 @@
       <updated>1701949765562</updated>
       <workItem from="1701949766646" duration="2388000" />
       <workItem from="1701952467330" duration="463000" />
-      <workItem from="1701955325155" duration="480000" />
+      <workItem from="1701955325155" duration="3050000" />
     </task>
     <servers />
   </component>
