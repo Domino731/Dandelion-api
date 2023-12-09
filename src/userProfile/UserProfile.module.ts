@@ -5,9 +5,10 @@ import { JwtStrategy } from '../auth/strategies/jwt.strategy';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserProfileEntity } from './UserProfile.entity';
 import { UserProfileService } from './UserProfile.service';
+import { User } from '../users/user.entity';
 
 @Module({
-  imports: [AuthModule, TypeOrmModule.forFeature([UserProfileEntity])],
+  imports: [AuthModule, TypeOrmModule.forFeature([User, UserProfileEntity])],
   controllers: [UserProfileController],
   providers: [JwtStrategy, UserProfileService],
   exports: [UserProfileService],
