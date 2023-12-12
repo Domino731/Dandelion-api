@@ -5,6 +5,7 @@ import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import config from 'ormconfig';
 import { UserProfileModule } from './userProfile/UserProfile.module';
+import { FriendsModule } from './friends/friends.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { UserProfileModule } from './userProfile/UserProfile.module';
     AuthModule,
     UsersModule,
     ArticlesModule,
+    FriendsModule,
   ],
   controllers: [],
   providers: [],

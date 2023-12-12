@@ -29,4 +29,11 @@ export class UserProfileService {
       throw new Error('SERVER ERROR!');
     }
   }
+
+  async findUsersByNickname(nickname: string) {
+    return await this.userProfileRepo
+      .createQueryBuilder('user_entity') // Specify the alias for the table
+      .where('user_entity.nick LIKE :nick', { nick: `%${nickname}%` }) // Fix the parameter name
+      .getMany();
+  }
 }
