@@ -2,10 +2,13 @@ import {
   BeforeInsert,
   Column,
   Entity,
+  ManyToMany,
+  ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { FriendsListEntity } from '../friends/entities/friendsList.entity';
+import { FriendInvitationEntityEntity } from '../friends/entities/friendInvitationEntity.entity';
 
 @Entity({ name: 'user_entity' })
 export class UserProfileEntity {
@@ -28,4 +31,15 @@ export class UserProfileEntity {
     (friendsListEntity) => friendsListEntity.userProfile,
   )
   friends: FriendsListEntity[];
+
+  @ManyToMany(
+    () => FriendInvitationEntityEntity,
+    (friendInvitationEntity) => friendInvitationEntity.sender,
+  )
+  friendsInvitationsAsSender: FriendInvitationEntityEntity[];
+  @ManyToMany(
+    () => FriendInvitationEntityEntity,
+    (friendInvitationEntity) => friendInvitationEntity.receiver,
+  )
+  friendsInvitationsAsReceiver: FriendInvitationEntityEntity[];
 }
