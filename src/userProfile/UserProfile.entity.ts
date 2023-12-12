@@ -1,4 +1,11 @@
-import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BeforeInsert,
+  Column,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { FriendsListEntity } from '../friends/entities/friendsList.entity';
 
 @Entity({ name: 'user_entity' })
 export class UserProfileEntity {
@@ -15,4 +22,10 @@ export class UserProfileEntity {
   createCreatedDate() {
     this.createdDate = new Date();
   }
+
+  @OneToMany(
+    () => FriendsListEntity,
+    (friendsListEntity) => friendsListEntity.userProfile,
+  )
+  friends: FriendsListEntity[];
 }
