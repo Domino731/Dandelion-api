@@ -18,8 +18,9 @@ export class FriendsController {
 
   @UseGuards(JwtAuthGuard)
   @Get()
-  getFriendsList() {
-    return [];
+  async index(@Request() req) {
+    const profile = await this.friendsService.findProfileByUserId(req.user.id);
+    return this.friendsService.getFriendsList(profile.id);
   }
 
   @UseGuards(JwtAuthGuard)

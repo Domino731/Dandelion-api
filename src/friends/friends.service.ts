@@ -18,11 +18,6 @@ export class FriendsService {
     private readonly friendInvitationRepo: Repository<FriendInvitationEntityEntity>,
   ) {}
 
-  getFriendsList() {
-    // TODO: add database connection
-    return [];
-  }
-
   async findProfileByUserId(userId: number) {
     const user = await this.userRepo.findOne({
       where: { id: userId },
@@ -80,7 +75,7 @@ export class FriendsService {
       where: {
         id: invitationId,
       },
-      relations: ['receiver'],
+      relations: ['receiver', 'sender'],
     });
 
     if (!invitation) {
@@ -101,5 +96,31 @@ export class FriendsService {
     const data = await this.friendInvitationRepo.remove(invitation);
 
     return data;
+  }
+
+  async getFriendsList(profileId: string) {
+    const friends = await this.friendRepo
+      .createQueryBuilder('friend')
+      .where(
+        'friend.friendProfile1.id = :profileId OR friend.friendProfile2.id = :profileId',
+        { profileId },
+      )
+      .leftJoinAndSelect('friend.friendProfile1', 'friendProfile1')
+      .leftJoinAndSelect('friend.friendProfile2', 'friendProfile2')
+      .getMany();
+
+    return friends.map((el) => {
+      let nick = el.friendProfile1.nick;
+      let friendProfileId = el.friendProfile1.id;
+      if (el.friendProfile1.id === profileId) {
+        nick = el.friendProfile2.nick;
+        friendProfileId = el.friendProfile2.id;
+      }
+      return {
+        id: el.id,
+        friendNick: nick,
+        friendProfileId,
+      };
+    });
   }
 }
