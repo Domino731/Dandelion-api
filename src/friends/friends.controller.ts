@@ -33,9 +33,10 @@ export class FriendsController {
     const senderProfile = await this.friendsService.findProfileByUserId(
       req.user.id,
     );
-    return this.friendsService.sendFriendInvitation(
+    const data = await this.friendsService.sendFriendInvitation(
       senderProfile,
       sendFriendRequestDto.profileId,
     );
+    return data;
   }
 }
