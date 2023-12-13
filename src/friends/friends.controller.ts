@@ -10,6 +10,7 @@ import {
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { FriendsService } from './friends.service';
 import { SendFriendRequestDto } from './dto/SendFriendRequest.dto';
+import { AcceptInvitationDto } from './dto/AcceptInvitation.dto';
 
 @Controller('friends')
 export class FriendsController {
@@ -52,5 +53,17 @@ export class FriendsController {
   async getInvitationsAsReceiver(@Request() req) {
     const profile = await this.friendsService.findProfileByUserId(req.user.id);
     return await this.friendsService.getFriendInvitationsAsReceiver(profile.id);
+  }
+  @UseGuards(JwtAuthGuard)
+  @Post('accept-invitation')
+  async acceptInvitation(
+    @Request() req,
+    @Body() acceptInvitationDto: AcceptInvitationDto,
+  ) {
+    const profile = await this.friendsService.findProfileByUserId(req.user.id);
+    return await this.friendsService.acceptInvitation(
+      profile.id,
+      acceptInvitationDto.id,
+    );
   }
 }

@@ -71,4 +71,29 @@ export class FriendsService {
       };
     });
   }
+
+  async acceptInvitation(profileId: string, invitationId: number) {
+    const invitation = await this.friendInvitationRepo.findOne({
+      where: {
+        id: invitationId,
+      },
+      relations: ['receiver'],
+    });
+
+    if (!invitation) {
+      throw new Error('Friend invitation not found');
+    }
+    if (invitation.receiver.id !== profileId) {
+      throw new Error(
+        'Receiver id is different, you cannot accept the friend invitation as a sender',
+      );
+    }
+
+    await this.friendInvitationRepo.remove(invitation);
+
+    return {
+      profileId,
+      invitationId,
+    };
+  }
 }
