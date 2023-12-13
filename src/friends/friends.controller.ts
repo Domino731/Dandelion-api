@@ -37,6 +37,20 @@ export class FriendsController {
       senderProfile,
       sendFriendRequestDto.profileId,
     );
-    return data;
+    return 'SUCCESS';
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('invitations-as-sender')
+  async getInvitationsAsSender(@Request() req) {
+    const profile = await this.friendsService.findProfileByUserId(req.user.id);
+    return await this.friendsService.getFriendInvitationsAsSender(profile.id);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('invitations-as-receiver')
+  async getInvitationsAsReceiver(@Request() req) {
+    const profile = await this.friendsService.findProfileByUserId(req.user.id);
+    return await this.friendsService.getFriendInvitationsAsReceiver(profile.id);
   }
 }

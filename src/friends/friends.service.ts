@@ -39,4 +39,36 @@ export class FriendsService {
     });
     return await this.friendInvitationRepo.save(invitation);
   }
+
+  async getFriendInvitationsAsSender(senderId: string) {
+    const invitations = await this.friendInvitationRepo.find({
+      where: {
+        sender: { id: senderId },
+      },
+      relations: ['receiver'],
+    });
+    return invitations.map((el) => {
+      return {
+        id: el.id,
+        sendTo: el.receiver.nick,
+        createdAt: el.createdAt,
+      };
+    });
+  }
+
+  async getFriendInvitationsAsReceiver(receiverId: string) {
+    const invitations = await this.friendInvitationRepo.find({
+      where: {
+        receiver: { id: receiverId },
+      },
+      relations: ['sender'],
+    });
+    return invitations.map((el) => {
+      return {
+        id: el.id,
+        sender: el.sender.nick,
+        createdAt: el.createdAt,
+      };
+    });
+  }
 }
