@@ -3,10 +3,8 @@ import {
   Column,
   Entity,
   ManyToMany,
-  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { FriendsListEntity } from '../friends/entities/friendsList.entity';
 import { FriendInvitationEntityEntity } from '../friends/entities/friendInvitationEntity.entity';
 
 @Entity({ name: 'user_entity' })
@@ -24,12 +22,6 @@ export class UserProfileEntity {
   createCreatedDate() {
     this.createdDate = new Date();
   }
-
-  @OneToMany(
-    () => FriendsListEntity,
-    (friendsListEntity) => friendsListEntity.userProfile,
-  )
-  friends: FriendsListEntity[];
 
   @ManyToMany(
     () => FriendInvitationEntityEntity,

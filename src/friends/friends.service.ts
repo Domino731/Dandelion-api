@@ -4,11 +4,14 @@ import { User } from '../users/user.entity';
 import { Repository } from 'typeorm';
 import { UserProfileEntity } from '../userProfile/UserProfile.entity';
 import { FriendInvitationEntityEntity } from './entities/friendInvitationEntity.entity';
+import { FriendsListEntity } from './entities/friendsList.entity';
 
 @Injectable()
 export class FriendsService {
   constructor(
     @InjectRepository(User) private readonly userRepo: Repository<User>,
+    @InjectRepository(FriendsListEntity)
+    private readonly friendRepo: Repository<FriendsListEntity>,
     @InjectRepository(UserProfileEntity)
     private readonly userProfileRepo: Repository<UserProfileEntity>,
     @InjectRepository(FriendInvitationEntityEntity)
@@ -89,11 +92,14 @@ export class FriendsService {
       );
     }
 
-    await this.friendInvitationRepo.remove(invitation);
+    const { receiver, sender } = invitation;
 
-    return {
-      profileId,
-      invitationId,
-    };
+    const friends = await this.friendRepo.create();
+    friends.friendProfile2 = receiver;
+    friends.friendProfile1 = sender;
+    await this.friendRepo.save(friends);
+    const data = await this.friendInvitationRepo.remove(invitation);
+
+    return data;
   }
 }
