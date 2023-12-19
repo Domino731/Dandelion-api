@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/nest-crash-course.iml" filepath="$PROJECT_DIR$/.idea/nest-crash-course.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dendalionapi.iml" filepath="$PROJECT_DIR$/.idea/dendalionapi.iml" />
     </modules>
   </component>
 </project>

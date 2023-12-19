@@ -17,7 +17,8 @@ const UserProfile_module_1 = require("./userProfile/UserProfile.module");
 const friends_module_1 = require("./friends/friends.module");
 let AppModule = class AppModule {
 };
-AppModule = __decorate([
+exports.AppModule = AppModule;
+exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
             typeorm_1.TypeOrmModule.forRoot(ormconfig_1.default),
@@ -31,5 +32,4 @@ AppModule = __decorate([
         providers: [],
     })
 ], AppModule);
-exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

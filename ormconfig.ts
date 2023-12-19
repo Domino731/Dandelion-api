@@ -8,12 +8,6 @@ const config: PostgresConnectionOptions = {
   password: 'qwerty',
   database: 'main',
   entities: ['dist/**/*.entity.js'],
-  migrations: ['dist/db/migrations/*.js'],
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  cli: {
-    migrationsDir: 'dist/db/migrations/*.js',
-  },
   // TODO before release: change
   synchronize: true,
 };
